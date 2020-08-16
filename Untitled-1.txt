@@ -1,2 +1,57 @@
-print('hello world')
-a = 1
+from graph import *
+
+def circl(x, y, r, z):
+    penColor('black')
+    penSize(1)
+    brushColor(z)
+    circle(x,y,r)
+
+def pr(x, y, x2, y2,z):
+    penColor('black')
+    penSize(0)
+    brushColor(z)
+    rectangle(x, y, x2, y2)
+
+canvasSize(800, 800)
+windowSize(800, 800)
+
+#sky,water,erth
+pr(0,0,800,300,'cyan')
+pr(0,300,800,500,'blue')
+pr(0,500,800,800,'yellow')
+
+circl(700, 70, 55,'yellow') # sun
+
+#oblaka
+x = 150
+y = 70
+b = 0
+for i in range(3):
+    circl(x + 30, y - 30, 30, 'white')
+    circl(x,y,30, 'white')
+    x+=40
+    b+=1
+    if b == 3:
+        circl(x, y, 30, 'white')
+
+#ship
+pr(400,320,700,380, 'brown')
+
+p = [[700, 319], [785,320], [700,380]]
+penColor('black')
+brushColor('brown')
+polygon(p)
+
+
+arc(x1, y1, x2, y2, start, end[, style] )
+нарисовать дугу или сектор овала, вписанного в прямоугольник  с координатами противолежащих углов (x1,y1) и (x2,y2); start – начальный угол сектора (в градусах), end – конечный угол сектора (в градусах) ; аргумент style может принимать значения ARC (только дуга), PIESLICE (сектор с заливкой) и CHORD (сегмент – дуга и хорда – с заливкой); цвет контура и заливки определяются последними командами penColor и brushColor; функция возвращает ссылку на объект-дугу.
+
+
+
+
+
+
+
+
+
+run()
